@@ -211,7 +211,7 @@
 							<div class="control-group">
 								<div class="controls">
 									<input type="text" class="form-control input-text"
-										   placeholder="Nome completo" id="name" name="nome" required
+										   placeholder="Nome completo"  name="nome" required
 										   data-validation-required-message="Por favor entre com seu nome" />
 
 									<p class="help-block"></p>
@@ -220,8 +220,15 @@
 							<div class="control-group">
 								<div class="controls">
 									<input type="email" class="form-control input-text" placeholder="Email"
-										   id="email" required
+										   name="email" required
 										   data-validation-required-message="Por favor entre com um e-mail valido" />
+								</div>
+							</div>
+							<div class="control-group">
+								<div class="controls">
+									<input type="text" class="form-control input-text" placeholder="Assunto"
+										   name="assunto" required
+										   />
 								</div>
 							</div>
 
@@ -229,7 +236,7 @@
 							<div class="control-group">
 								<div class="controls">
 						<textarea rows="10" cols="100" class="form-control input-text"
-								  placeholder="Mensagem" id="msg" required
+								  placeholder="Mensagem" name="mensagem" required
 								  data-validation-required-message="Por favor entre com sua mensagem" minlength="5"
 								  data-validation-minlength-message="Min 5 characters"
 								  maxlength="999" style="resize:none">
