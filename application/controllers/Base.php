@@ -87,6 +87,7 @@ class Base extends CI_Controller {
         if($this->email->send())
         {
             $this->session->set_flashdata('success','Email enviado com sucesso!');
+
             $this->load->view('pag_inicial');
         }
         else

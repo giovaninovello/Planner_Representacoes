@@ -141,9 +141,12 @@
 	<div class="client_logos"><!--client_logos-->
 		<div class="container">
 			<ul class="fadeInRight animated wow">
-				<li><a href="http://www.dasa.com.br"><h1 style="color: white">DASA Diagnostico da América</h1></a></li>
-				<li><a href="http://www.oneletronicos.com.br"><h1 style="color: white" >On Eletrônicos</h1></a></li>
-				<li><a href="http://www.mundoirys.com.br"><h1 style="color: white" >Mundo Irys</h1></a></li>
+				<a href="http://www.mundoirys.com.br" style="text-decoration: none; color: white" onMouseOver="this.style.textDecoration='none';" onMouseOut="this.style.textDecoration='none';" >
+					<h1><b>Mundo Irys</b></h1></a>
+				<a href="http://www.oneletronicos.com.br" style="text-decoration: none; color: white" onMouseOver="this.style.textDecoration='none';" onMouseOut="this.style.textDecoration='none';" >
+					<h1><b>On Eletronicos</b></h1></a>
+				<a href="http://www.dasa.com.br" style="text-decoration: none; color: white" onMouseOver="this.style.textDecoration='none';" onMouseOut="this.style.textDecoration='none';" >
+					<h1><b>Dasa</b></h1></a>
 
 			</ul>
 		</div>
@@ -198,43 +201,43 @@
 				</div>
 				<div class="col-lg-8 wow fadeInLeft delay-06s">
 
-                        
-						<!--NOTE: Update your email Id in "contact_me.php" file in order to receive emails from your contact form-->
-                        <?php if ($this->session->flashdata('success') == TRUE): ?>
-                            <div class="alert alert-success"><?= $this->session->flashdata('success'); ?></div>
-                        <?php endif; ?>
 
-                        <?php if ($this->session->flashdata('error') == TRUE): ?>
-                            <div class="alert alert-warning"><?= $this->session->flashdata('error'); ?></div>
-                        <?php endif; ?>
-                        <form method="POST" action="<?=base_url('enviar-email')?>">
-							<div class="control-group">
-								<div class="controls">
-									<input type="text" class="form-control input-text"
-										   placeholder="Nome completo"  name="nome" required
-										   data-validation-required-message="Por favor entre com seu nome" />
+					<!--NOTE: Update your email Id in "contact_me.php" file in order to receive emails from your contact form-->
+					<?php if ($this->session->flashdata('success') == TRUE): ?>
+						<div class="alert alert-success"><?= $this->session->flashdata('success'); ?></div>
+					<?php endif; ?>
 
-									<p class="help-block"></p>
-								</div>
+					<?php if ($this->session->flashdata('error') == TRUE): ?>
+						<div class="alert alert-warning"><?= $this->session->flashdata('error'); ?></div>
+					<?php endif; ?>
+					<form method="POST" action="<?=base_url('enviar-email')?>" id="modal">
+						<div class="control-group">
+							<div class="controls">
+								<input type="text" class="form-control input-text"
+									   placeholder="Nome completo"  name="nome" required
+									   data-validation-required-message="Por favor entre com seu nome" />
+
+								<p class="help-block"></p>
 							</div>
-							<div class="control-group">
-								<div class="controls">
-									<input type="email" class="form-control input-text" placeholder="Email"
-										   name="email" required
-										   data-validation-required-message="Por favor entre com um e-mail valido" />
-								</div>
+						</div>
+						<div class="control-group">
+							<div class="controls">
+								<input type="email" class="form-control input-text" placeholder="Email"
+									   name="email" required
+									   data-validation-required-message="Por favor entre com um e-mail valido" />
 							</div>
-							<div class="control-group">
-								<div class="controls">
-									<input type="text" class="form-control input-text" placeholder="Assunto"
-										   name="assunto" required
-										   />
-								</div>
+						</div>
+						<div class="control-group">
+							<div class="controls">
+								<input type="text" class="form-control input-text" placeholder="Assunto"
+									   name="assunto" required
+								/>
 							</div>
+						</div>
 
 
-							<div class="control-group">
-								<div class="controls">
+						<div class="control-group">
+							<div class="controls">
 						<textarea rows="10" cols="100" class="form-control input-text"
 								  placeholder="Mensagem" name="mensagem" required
 								  data-validation-required-message="Por favor entre com sua mensagem" minlength="5"
@@ -242,23 +245,23 @@
 								  maxlength="999" style="resize:none">
 
 						</textarea>
-								</div>
 							</div>
-                            <div class="checkbox">
-                                <label><input type="checkbox" name="anexo"/><strong>Enviar anexo</strong></label>
-                            </div>
-                            <div class="checkbox">
-                                <label><input type="checkbox" name="template"/><strong>Usar template</strong></label>
-                            </div>
+						</div>
+						<div class="checkbox">
+							<label><input type="checkbox" name="anexo"/><strong>Enviar anexo</strong></label>
+						</div>
+						<div class="checkbox">
+							<label><input type="checkbox" name="template"/><strong>Usar template</strong></label>
+						</div>
 
-							<div id="success"> </div> <!-- For success/fail messages -->
-							<button type="submit" class="btn btn-primary input-btn pull-right" id="btn">Enviar</button><br />
+						<div id="success"> </div> <!-- For success/fail messages -->
+						<button type="submit" class="btn btn-primary input-btn pull-right" id="btn">Enviar</button><br />
 
-						</form>
+					</form>
 
 
 
-					</div>
+				</div>
 			</div>
 		</section>
 	</div>
