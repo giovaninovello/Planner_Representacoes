@@ -18,7 +18,14 @@
 
 </head>
 <body>
+<?php if ($this->session->flashdata('success') == TRUE): ?>
+	<div class="alert alert-success" ><?= $this->session->flashdata('success'); ?></div>
+	<script>alert('Sua mensagem foi enviada com sucesso , em breve estaremos retornando')</script>
+<?php endif; ?>
 
+<?php if ($this->session->flashdata('error') == TRUE): ?>
+	<div class="alert alert-warning"><?= $this->session->flashdata('error'); ?></div>
+<?php endif; ?>
 <!--Header_section-->
 <header id="header_wrapper">
 	<div class="container">
@@ -203,13 +210,7 @@
 
 
 					<!--NOTE: Update your email Id in "contact_me.php" file in order to receive emails from your contact form-->
-					<?php if ($this->session->flashdata('success') == TRUE): ?>
-						<div class="alert alert-success"><?= $this->session->flashdata('success'); ?></div>
-					<?php endif; ?>
 
-					<?php if ($this->session->flashdata('error') == TRUE): ?>
-						<div class="alert alert-warning"><?= $this->session->flashdata('error'); ?></div>
-					<?php endif; ?>
 					<form method="POST" action="<?=base_url('enviar-email')?>" id="modal">
 						<div class="control-group">
 							<div class="controls">
@@ -247,15 +248,10 @@
 						</textarea>
 							</div>
 						</div>
-						<div class="checkbox">
-							<label><input type="checkbox" name="anexo"/><strong>Enviar anexo</strong></label>
-						</div>
-						<div class="checkbox">
-							<label><input type="checkbox" name="template"/><strong>Usar template</strong></label>
-						</div>
+
 
 						<div id="success"> </div> <!-- For success/fail messages -->
-						<button type="submit" class="btn btn-primary input-btn pull-right" id="btn">Enviar</button><br />
+						<button type="submit" class="btn btn-primary input-btn pull-right"  id="btn">Enviar</button><br />
 
 					</form>
 

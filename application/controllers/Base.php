@@ -29,6 +29,7 @@ class Base extends CI_Controller {
         $this->load->library('email');
         //Recupera os dados do formulário
         $dados = $this->input->post();
+        $nome =$this->input->post('nome');
 
         //Inicia o processo de configuração para o envio do email
         $config['protocol'] = 'smtp'; // define o protocolo utilizado
@@ -68,17 +69,17 @@ class Base extends CI_Controller {
          * Se o usuário escolheu o envio com template, passa o conteúdo do template para a mensagem
          * caso contrário passa somente o conteúdo do campo 'mensagem'
          */
-        if(isset($dados['template']))
-            $this->email->message($this->load->view('email-template',$dados, TRUE));
-        else
-            $this->email->message($dados['mensagem']);
+        //if(isset($dados['template']))
+           // $this->email->message($this->load->view('email-template',$dados, TRUE));
+        //else
+        $this->email->message($dados['mensagem']);
 
         /*
          * Se foi selecionado o envio de um anexo, insere o arquivo no email
          * através do método 'attach' da library 'Email'
          */
-        if(isset($dados['anexo']))
-            $this->email->attach('./assets/images/unici/logo.png');
+        //if(isset($dados['anexo']))
+          //  $this->email->attach('./assets/img/logo_dasa.png');
 
         /*
          * Se o envio foi feito com sucesso, define a mensagem de sucesso
@@ -88,12 +89,17 @@ class Base extends CI_Controller {
         {
             $this->session->set_flashdata('success','Email enviado com sucesso!');
 
-            $this->load->view('pag_inicial');
+
+            redirect(base_url(''));
+
+            
         }
         else
         {
             $this->session->set_flashdata('error',$this->email->print_debugger());
             $this->load->view('pag_inicial');
+
         }
+
     }
 }
