@@ -29,7 +29,8 @@ class Base extends CI_Controller {
         $this->load->library('email');
         //Recupera os dados do formulário
         $dados = $this->input->post();
-        $nome =$this->input->post('nome');
+
+
 
         //Inicia o processo de configuração para o envio do email
         $config['protocol'] = 'smtp'; // define o protocolo utilizado
